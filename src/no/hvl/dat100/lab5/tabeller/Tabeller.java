@@ -25,6 +25,7 @@ public class Tabeller {
 
 			str = str + tabell[i];
 
+			// sett kun komma om der er fler element igjen
 			if (i < tabell.length - 1) {
 				str = str + ",";
 			}
@@ -94,10 +95,8 @@ public class Tabeller {
 		int lengde = tabell.length;
 		int[] nytabell = new int[lengde];
 
-		int k = lengde - 1;
 		for (int i = 0; i < lengde; i++) {
-			nytabell[k] = tabell[i];
-			k--;
+			nytabell[i] = tabell[lengde-1-i];
 		}
 
 		return nytabell;
