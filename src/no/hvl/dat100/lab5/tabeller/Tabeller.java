@@ -5,6 +5,7 @@ public class Tabeller {
 	// a)
 	public static void skrivUt(int[] tabell) {
 
+		// TODO
 		System.out.print("[");
 
 		for (int tall : tabell) {
@@ -19,6 +20,7 @@ public class Tabeller {
 	// b)
 	public static String tilStreng(int[] tabell) {
 
+		// TODO
 		String str = "[";
 
 		for (int i = 0; i < tabell.length; i++) {
@@ -40,6 +42,7 @@ public class Tabeller {
 	// c)
 	public static int summer(int[] tabell) {
 
+		// TODO
 		int sum = 0;
 
 		for (int tall : tabell) {
@@ -52,6 +55,7 @@ public class Tabeller {
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
 
+		// TODO
 		boolean funnet = false;
 		int i = 0;
 
@@ -72,6 +76,7 @@ public class Tabeller {
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
 
+		// TODO
 		int posisjon = -1;
 		int i = 0;
 
@@ -92,6 +97,7 @@ public class Tabeller {
 	// f)
 	public static int[] reverser(int[] tabell) {
 
+		// TODO
 		int lengde = tabell.length;
 		int[] nytabell = new int[lengde];
 
@@ -105,6 +111,7 @@ public class Tabeller {
 	// g)
 	public static boolean erSortert(int[] tabell) {
 
+		// TODO
 		int lengde = tabell.length;
 		boolean sortert = true;
 
@@ -123,6 +130,7 @@ public class Tabeller {
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
 
+		// TODO
 		int lengde1 = tabell1.length;
 		int lengde2 = tabell2.length;
 

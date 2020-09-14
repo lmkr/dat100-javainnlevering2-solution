@@ -2,8 +2,10 @@ package no.hvl.dat100.lab6.matriser;
 
 public class Matriser {
 
+	// a)
 	public static void skrivUt(int[][] matrise) {
 		
+		// TODO
 		for (int i = 0; i < matrise.length; i++) {
 			for (int j = 0; j < matrise[i].length; j++) {
 				System.out.print(matrise[i][j] + " ");
@@ -12,8 +14,10 @@ public class Matriser {
 		}
 	}
 
+	// b)
 	public static String tilStreng(int[][] matrise) {
 
+		// TODO
 		String str = "";
 		
 		for (int i = 0; i < matrise.length; i++) {
@@ -29,8 +33,10 @@ public class Matriser {
 		
 	}
 
+	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
 		
+		// TODO
 		int m = matrise.length;
 		int n = matrise[0].length;
 		
@@ -47,8 +53,31 @@ public class Matriser {
 	
 	}
 
+	// d)
+	public static boolean erLik(int[][] a, int[][] b) {
+
+		// TODO
+		boolean like = true;
+		
+		int m = a.length;
+		int n = b.length;
+		
+		for (int i = 0; i < m && like; i++) {
+			for (int j = 0; j < n && like; j++) {
+				if (a[i][j] != b[i][j]) {
+					like = false;
+				}
+
+			}
+
+		}
+		return like;
+	}
+	
+	// e)
 	public static int[][] speile(int[][] matrise) {
 
+		// TODO
 		int m = matrise.length;
 		int[][] nymatrise = new int[m][m];
 
@@ -62,8 +91,10 @@ public class Matriser {
 	
 	}
 
+	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
 
+		// TODO
 		int m = a.length;
 		int n = b.length;
 		
@@ -83,24 +114,5 @@ public class Matriser {
 
 		return c;
 	
-	}
-
-	public static boolean erLik(int[][] mat1, int[][] mat2) {
-
-		boolean like = true;
-		
-		int m = mat1.length;
-		int n = mat2.length;
-		
-		for (int i = 0; i < m && like; i++) {
-			for (int j = 0; j < n && like; j++) {
-				if (mat1[i][j] != mat2[i][j]) {
-					like = false;
-				}
-
-			}
-
-		}
-		return like;
 	}
 }
