@@ -78,16 +78,17 @@ public class Matriser {
 	public static int[][] speile(int[][] matrise) {
 
 		// TODO
+
 		int m = matrise.length;
-		int[][] nymatrise = new int[m][m];
+		int[][] speiletmatrice = new int[m][m];
 
 		for (int i = 0; i < m; i++) {
 			for (int j = 0; j < m; j++) {
-				nymatrise[j][i] = matrise[i][j];
+				speiletmatrice[j][i] = matrise[i][j];
 			}
 		}
 
-		return nymatrise;
+		return speiletmatrice;
 	
 	}
 
