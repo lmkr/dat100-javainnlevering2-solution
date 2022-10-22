@@ -1,17 +1,12 @@
 package no.hvl.dat100.lab5.tabeller;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.Rule;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.rules.TestRule;
-import org.junit.rules.Timeout;
+import org.junit.jupiter.api.Timeout;
 
+@Timeout(30)
 class TabellerEnhetsTester {
-
-	@Rule
-	public TestRule globalTimeout = Timeout.seconds(30);
 
 	private static int[] tabell1, tabell2, tabell3;
 
