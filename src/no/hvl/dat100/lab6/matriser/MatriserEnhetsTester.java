@@ -10,7 +10,7 @@ import org.junit.rules.Timeout;
 
 class MatriserEnhetsTester {
 
-	static int[][] a,b;
+	static int[][] a,b,c;
 		
 	@Rule
 	public TestRule globalTimeout = Timeout.seconds(30);
@@ -38,6 +38,18 @@ class MatriserEnhetsTester {
 		b[1] = b1;
 		b[2] = b2;
 		
+		int[] c0 = {1,2,3};
+		int[] c1 = {4,5,6};
+		int[] c2 = {7,8,9};
+		int[] c3 = {10,11,12};
+		
+		c = new int[4][];
+		
+		c[0] = c0;
+		c[1] = c1;
+		c[2] = c2;
+		c[3] = c3;
+		
 	}
 	
 	@Test
@@ -45,23 +57,31 @@ class MatriserEnhetsTester {
 		
 		Matriser.skrivUt(a);
 		Matriser.skrivUt(b);
+		Matriser.skrivUt(c);
 	}
 	
 	@Test
 	void testtilStreng() {
 		
 		assertEquals("1 2 3 \n4 5 6 \n7 8 9 \n",Matriser.tilStreng(a));
+		assertEquals("1 2 3 \n4 5 6 \n7 8 9 \n10 11 12 \n",Matriser.tilStreng(c));
 	}
 
 	@Test
 	void testSkaler() {
 		
-		int[][] skalert = { {2,4,6}, {8,10,12}, {14,16,18} };
+		int[][] askalert = { {2,4,6}, {8,10,12}, {14,16,18} };
+		int[][] cskalert = { {2,4,6}, {8,10,12}, {14,16,18}, {20,22,24} };
 		
 		int[][] skaler = Matriser.skaler(2,a);
 		
 		assertFalse(skaler == a);
-		assertArrayEquals(skalert,skaler);
+		assertArrayEquals(askalert,skaler);
+		
+		skaler = Matriser.skaler(2, c);
+		assertFalse(skaler == c);
+		assertArrayEquals(cskalert,skaler);
+		
 	}
 	
 	@Test
@@ -78,11 +98,15 @@ class MatriserEnhetsTester {
 	@Test 
 	void testMultipliser () {
 
-		int[][] c = { {84,90,96}, {201,216,231}, {318,342,366} };
+		int[][] ab = { {84,90,96}, {201,216,231}, {318,342,366} };
 
 		int[][] multiplisert = Matriser.multipliser(a,b);
 		
-		assertArrayEquals(c,multiplisert);
+		assertArrayEquals(ab,multiplisert);
+				
+		int[][] ca = { {30,36,42}, {66,81,96}, {102,126,150}, {138,171,204} };
+		multiplisert = Matriser.multipliser(c,a);
+		assertArrayEquals(ca,multiplisert);
 		
 	}
 	
@@ -90,6 +114,9 @@ class MatriserEnhetsTester {
 	void testerLik() {
 		
 		assertTrue(Matriser.erLik(a, a));
+		assertTrue(Matriser.erLik(c, c));
 		assertFalse(Matriser.erLik(a, b));
+		assertFalse(Matriser.erLik(a, c));
+		assertFalse(Matriser.erLik(c, a));
 	}
 }

@@ -59,8 +59,12 @@ public class Matriser {
 		// TODO
 		boolean like = true;
 		
+		if ((a.length != b.length) || (a[0].length != b[0].length)) {
+			return false;
+		}
+		
 		int m = a.length;
-		int n = b.length;
+		int n = a[0].length;
 		
 		for (int i = 0; i < m && like; i++) {
 			for (int j = 0; j < n && like; j++) {
@@ -97,7 +101,7 @@ public class Matriser {
 
 		// TODO
 		int m = a.length;
-		int n = b.length;
+		int n = b[0].length;
 		
 		int l = a[0].length;
 		
